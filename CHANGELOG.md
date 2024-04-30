@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# Kotlin-Annotation-Folding Changelog
+# Kotlin-Advanced-Folding Changelog
 
 ## [Unreleased]
 ### Added
