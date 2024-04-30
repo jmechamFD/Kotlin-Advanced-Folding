@@ -1,4 +1,4 @@
-package com.github.jmechamfd.kotlinannotationfolding
+package com.github.jmechamfd.kotlinadvancedfolding
 
 import com.intellij.testFramework.TestDataPath
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
