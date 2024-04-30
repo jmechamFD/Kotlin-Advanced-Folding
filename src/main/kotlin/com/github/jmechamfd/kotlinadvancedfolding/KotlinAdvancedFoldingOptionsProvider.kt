@@ -7,8 +7,8 @@ class KotlinAdvancedFoldingOptionsProvider : BeanConfigurable<KotlinAdvancedFold
     KotlinAdvancedFoldingSettings, "Kotlin Advanced Folding"
 ), CodeFoldingOptionsProvider {
     init {
-        checkBox("Enable Annotation Folding", KotlinAdvancedFoldingSettings::annotationFoldingEnabled)
-        checkBox("Enable Method Calls", KotlinAdvancedFoldingSettings::callExpressionFoldingEnabled)
-        checkBox("Enable Collections Folding", KotlinAdvancedFoldingSettings::collectionLiteralFoldingEnabled)
+        checkBox("Annotations", KotlinAdvancedFoldingSettings::annotationFoldingEnabled)
+        checkBox("Method Calls", KotlinAdvancedFoldingSettings::callExpressionFoldingEnabled)
+        checkBox("Collections", KotlinAdvancedFoldingSettings::collectionLiteralFoldingEnabled)
     }
 }
