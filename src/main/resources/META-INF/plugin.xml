@@ -2,6 +2,12 @@
 <idea-plugin>
     <id>com.github.jmechamfd.kotlinadvancedfolding</id>
     <name>Kotlin-Advanced-Folding</name>
+    <description>
+        This plugin provides additional code folding for Kotlin files.
+        Specifically it adds code folding for: Annotations, Arrays/Collections and Method Calls.
+
+        You can configure the plugin in the settings under File -> Settings -> Editor -> General -> Code Folding -> Kotlin Advanced Folding
+    </description>
     <vendor>jmechamfd</vendor>
 
     <depends>com.intellij.modules.platform</depends>
