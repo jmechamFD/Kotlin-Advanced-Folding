@@ -1,9 +1,11 @@
 # Kotlin-Advanced-Folding
 
 ## Description
+<!-- Plugin description -->
 This plugin provides additional folding for Kotlin code inside the intelliJ IDE. 
 
 Specifically, it adds code folding for: Annotations, Arrays/Collections and Method calls.
+<!-- Plugin description end -->
 
 ![](https://github.com/jmechamFD/Kotlin-Advanced-Folding/blob/main/src/main/resources/assets/Kotlin-Advanced-Folding-Example.gif)
 
