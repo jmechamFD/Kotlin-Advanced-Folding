@@ -4,10 +4,21 @@
     <name>Kotlin-Advanced-Folding</name>
     <description>
         This plugin provides additional code folding for Kotlin files.
-        Specifically it adds code folding for: Annotations, Arrays/Collections and Method Calls.
+        Specifically it adds code folding for: Annotations, Arrays/Collections and Method Definitions/Calls.
 
         You can configure the plugin in the settings under File -> Settings -> Editor -> General -> Code Folding -> Kotlin Advanced Folding
     </description>
+    <change-notes>
+        <![CDATA[
+            <h2>What's New in Version 0.0.4</h2>
+            <ul>
+                <li>New feature: Add Code Folding for Method Definitions</li>
+                <li>New feature: Adds configuration settings to fold the following by default: Annotations, Method Calls/Definitions and Collections</li>
+                <li>New feature: Adds configuration settings to enable and disable showing of the first parameter/element of the folded code</li>
+                <li>Improvement: Only folds regions between Parentheses or Brackets instead of folding the entire element</li>
+            </ul>
+        ]]>
+    </change-notes>
     <vendor>jmechamfd</vendor>
 
     <depends>com.intellij.modules.platform</depends>
