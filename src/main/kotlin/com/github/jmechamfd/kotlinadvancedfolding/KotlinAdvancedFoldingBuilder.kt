@@ -55,14 +55,24 @@ class KotlinAdvancedFoldingBuilder : FoldingBuilderEx() {
     private fun checkAndAddFoldingDescriptor(element: PsiElement, document: Document, descriptors: MutableList<FoldingDescriptor>) {
         return when (element) {
             is KtNamedFunction -> {
-                val startLineOffset = element.nameIdentifier?.textRange?.endOffset ?: return
-                val endLineOffset = element.valueParameterList?.textRange?.endOffset ?: return
-                val startLine = document.getLineNumber(startLineOffset)
-                val endLine = document.getLineNumber(endLineOffset)
-                if (startLine == endLine) {
+                val parameterListStartLineOffset = element.nameIdentifier?.textRange?.endOffset ?: return
+                val parameterListEndLineOffset = element.valueParameterList?.textRange?.endOffset ?: return
+                val bodyStartLineOffset = element.bodyExpression?.textRange?.startOffset?: return
+                val parameterListStartLine = document.getLineNumber(parameterListStartLineOffset)
+                val parameterListEndLine = document.getLineNumber(parameterListEndLineOffset)
+                val bodyStartLine = document.getLineNumber(bodyStartLineOffset)
+
+
+                if (parameterListStartLine == parameterListEndLine) {
                     return
                 }
-                val textRange = TextRange(startLineOffset + 1, endLineOffset - 1)
+                if (parameterListEndLine == bodyStartLine) {
+                    // if the parameter list end and body start are on the same line, fold one line before the parameter list ends
+                    val textRange = TextRange(parameterListStartLineOffset + 1, document.getLineEndOffset(bodyStartLine-1))
+                    descriptors.add(FoldingDescriptor(element.node, textRange))
+                    return
+                }
+                val textRange = TextRange(parameterListStartLineOffset + 1, parameterListEndLineOffset - 1)
                 descriptors.add(FoldingDescriptor(element.node, textRange))
                 return
             }
