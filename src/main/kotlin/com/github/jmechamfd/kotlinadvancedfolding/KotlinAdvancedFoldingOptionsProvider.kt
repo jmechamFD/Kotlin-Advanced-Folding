@@ -15,6 +15,7 @@ class KotlinAdvancedFoldingOptionsProvider : BeanConfigurable<KotlinAdvancedFold
         checkBox("Show first parameter in method definition previews", KotlinAdvancedFoldingSettings::namedFunctionShowFirstParam)
         checkBox("Enable Method Call Folding", KotlinAdvancedFoldingSettings::callExpressionFoldingEnabled)
         checkBox("Fold method calls by default", KotlinAdvancedFoldingSettings::callExpressionFoldedByDefault)
+        checkBox("Fold method calls inside arrays by default", KotlinAdvancedFoldingSettings::callExpressionInsideArrayFoldingEnabledByDefault)
         checkBox("Show first parameter in method call previews", KotlinAdvancedFoldingSettings::callExpressionShowFirstParam)
         checkBox("Enable Collection Folding", KotlinAdvancedFoldingSettings::collectionLiteralFoldingEnabled)
         checkBox("Fold collections by default", KotlinAdvancedFoldingSettings::collectionLiteralFoldedByDefault)

@@ -7,6 +7,7 @@ object KotlinAdvancedFoldingSettings {
     private const val ANNOTATION_SHOW_FIRST_PARAM_KEY = "KotlinAnnotationShowFirstParam"
     private const val CALL_EXPRESSION_FOLDING_ENABLED_KEY = "KotlinCallExpressionFoldingEnabled"
     private const val CALL_EXPRESSION_FOLDED_BY_DEFAULT = "KotlinCallExpressionFoldingByDefault"
+    private const val CALL_EXPRESSION_INSIDE_ARRAY_FOLDING_ENABLED_BY_DEFAULT = "KotlinCallExpressionInsideArrayFoldingEnabledByDefault"
     private const val CALL_EXPRESSION_SHOW_FIRST_PARAM_KEY = "KotlinCallExpressionShowFirstParam"
     private const val COLLECTION_LITERAL_FOLDING_ENABLED_KEY = "KotlinCollectionLiteralFoldingEnabled"
     private const val COLLECTION_LITERAL_FOLDED_BY_DEFAULT = "KotlinCollectionLiteralFoldingByDefault"
@@ -26,6 +27,10 @@ object KotlinAdvancedFoldingSettings {
     var callExpressionFoldingEnabled: Boolean
         get() = PropertiesComponent.getInstance().getBoolean(CALL_EXPRESSION_FOLDING_ENABLED_KEY, true)
         set(value) = PropertiesComponent.getInstance().setValue(CALL_EXPRESSION_FOLDING_ENABLED_KEY, value, true)
+
+    var callExpressionInsideArrayFoldingEnabledByDefault: Boolean
+        get() = PropertiesComponent.getInstance().getBoolean(CALL_EXPRESSION_INSIDE_ARRAY_FOLDING_ENABLED_BY_DEFAULT, true)
+        set(value) = PropertiesComponent.getInstance().setValue(CALL_EXPRESSION_INSIDE_ARRAY_FOLDING_ENABLED_BY_DEFAULT, value, true)
 
     var callExpressionShowFirstParam: Boolean
         get() = PropertiesComponent.getInstance().getBoolean(CALL_EXPRESSION_SHOW_FIRST_PARAM_KEY, true)

@@ -153,19 +153,21 @@ class KotlinAdvancedFoldingBuilder : FoldingBuilderEx() {
     override fun isCollapsedByDefault(node: ASTNode): Boolean {
         return when (node.psi) {
             is KtAnnotationEntry -> {
-                println("Annotation folded by default: ${KotlinAdvancedFoldingSettings.annotationFoldedByDefault}")
                 KotlinAdvancedFoldingSettings.annotationFoldedByDefault
             }
             is KtCallExpression -> {
-                println("Call expression folded by default: ${KotlinAdvancedFoldingSettings.callExpressionFoldedByDefault}")
+                // if call expression is the direct child of an collection literal
+                if (node.treeParent?.psi is KtCollectionLiteralExpression) {
+                    if (KotlinAdvancedFoldingSettings.callExpressionInsideArrayFoldingEnabledByDefault) {
+                        return true
+                    }
+                }
                 KotlinAdvancedFoldingSettings.callExpressionFoldedByDefault
             }
             is KtCollectionLiteralExpression -> {
-                println("Collection literal folded by default: ${KotlinAdvancedFoldingSettings.collectionLiteralFoldedByDefault}")
                 KotlinAdvancedFoldingSettings.collectionLiteralFoldedByDefault
             }
             is KtNamedFunction -> {
-                println("Named function folded by default: ${KotlinAdvancedFoldingSettings.namedFunctionFoldedByDefault}")
                 KotlinAdvancedFoldingSettings.namedFunctionFoldedByDefault
             }
             else -> {
